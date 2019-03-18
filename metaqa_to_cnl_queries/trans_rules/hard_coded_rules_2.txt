@@ -1,0 +1,36 @@
+the film whose name is 	
+the movie whose name is 	
+the actor whose name is 	
+the director whose name is 	
+the writer whose name is 	
+for the director XYZ	for the director who is XYZ
+for the writer XYZ	for the writer who is XYZ
+of the director XYZ	of the director who is XYZ
+of the screenwriter XYZ	of the screenwriter who is XYZ
+which a movie	which movie
+which a film	which film
+acted together	acts together
+starred together	stars together
+star together	stars together
+the screenwriter XYZ	XYZ
+the director XYZ	XYZ
+co-wrote	co-writes
+XYZ written movies	a movie that is written by XYZ
+XYZ written films	a film that is written by XYZ
+release a year the film	n:release-year of a film
+wrote films together with	writes a film with
+directed films together with	directs a film with
+wrote films with	writes a film with
+co-directed films with	co-directs a film with
+co-directed movies with	co-directs a movie with
+writes a movie?	writes which movie?
+a star with	stars with
+film co-writers	co-writer
+film co-directors	co-director
+movie co-writers	co-writer
+movie co-directors	co-director
+what is the film that	which film
+what is the movie that	which movie
+the actor in	the actor of
+together 	
+is also	also is

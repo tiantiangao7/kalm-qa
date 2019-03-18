@@ -1,0 +1,10 @@
+film XYZ	film whose name is XYZ
+XYZ a actor	an actor of XYZ
+XYZ a writer	a writer of XYZ
+XYZ a screenwriter	a screenwriter of XYZ
+XYZ director	director of XYZ
+that the actor in their film	of a film whose actor
+that the actor in their movie	of a movie whose actor
+that the director of their film	of a film whose director
+that the director of their movie	of a movie whose director
+falls under?	fall under?
