@@ -5,7 +5,7 @@ Authors: Tiantian Gao, Paul Fodor, Michael Kifer
 KALM QA is a continuing project based on our previous project KALM. It extends the KALM system to process more complex queries , muti-hop English questions. The benchmarks we use is the MetaQA dataset. 
 
 # Code
-* `metaqa/'
+* `metaqa/`
 
    `rectified_dataset/`
 * `rectified_metaqa_dataset/` The rectified version of the MetaQA vanilla dataset. The original MetaQA dataset contains errors for answers. We inspected the errors from the original MetaQA dataset and created a rectified version which contains the correct answers for each multi-hop question.
