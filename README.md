@@ -1,8 +1,8 @@
-# KALM QA
+# KALM-QA
 Authors: Tiantian Gao, Paul Fodor, Michael Kifer
 
 # Introduction
-KALM QA is a continuing project based on our previous project KALM. It extends the KALM system to process more complex queries , muti-hop English questions. The benchmarks we use is the MetaQA dataset. 
+KALM-QA is the question answering part of KALM. It is capable of answering complex multi-hop questions. We tested KALM-QA on MetaQA dataset and achieves 100% accuracy.
 
 # Code
 
