@@ -27,6 +27,6 @@ Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/M
 
 # How to run KALM-QA in Prolog?
 1. How to add frames to FrameOnt?
-2. We are using XSB Prolog and load ['kalm-qa/mk.pl'].
+2. We are using XSB Prolog (in order to run KALM-QA, one needs to install XSB Prolog from http://xsb.sourceforge.net/) and load ['kalm-qa/mk.pl'].
 3. How to train the frame parser? 
 4. How to ask questions?
