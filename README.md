@@ -19,7 +19,7 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 * `kalm-qa/` The source code for KALM-QA (Prolog).
 
 # How to generate MetaQA queries?
-1. The entrypoint to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in kalm-qa/metaqa_query.txt. **Note that** each time before running the program, metaqa_query.txt has to be cleared.
+1. The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in kalm-qa/metaqa_query.txt. **Note that** each time before running the program, metaqa_query.txt has to be cleared.
 2. Run tools/intermediate_query_processing/MetaQABatch.java on metaqa_query.txt to remove singleton variables.
 
 # How to convert MetaQA queries to CNL in Prolog format?
