@@ -23,4 +23,4 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 2. Run tools/intermediate_query_processing/MetaQABatch.java on metaqa_query.txt to remove singleton variables.
 
 # How to convert MetaQA queries to CNL in Prolog format?
-Run the JAVA program under `tools/metaqa_to_cnl`. The input files are the original MetaQA dataset (`metaqa/original`). 
+Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`. The input files are the original MetaQA dataset (`metaqa/original`). 
