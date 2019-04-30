@@ -28,9 +28,10 @@ Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/M
 1. cd kalm-qa
 2. xsb
 3. ['mk.pl'].
+4. Run the Java program tools/intermediate_query_processing/MetaQABatch.java. The input file is metaqa_query.txt. This step is used to remove singleton variables.
 
 The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
-4. Run the Java program tools/intermediate_query_processing/MetaQABatch.java. The input file is metaqa_query.txt. This step is used to remove singleton variables.
+
 
 # How to train KALM-QA parser?
 1. cd kalm-qa
