@@ -18,12 +18,26 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 * `error_analysis/3_hop` This directory contains the errors for 3-hop testing data. total_errors.txt has all the errors. fild_id_errors.txt has the errors that are caused by the issue where MetaQA doesn't distinguish the different films that share the same film ID. others_error.txt has all the rest errors caused by unknown reasons. We have manually checked 1628 (50%) of the "other errors" and added the reasons why MetaQA doesn't return the correct answers. The analysis is in metaqa_error_analysis.txt.
 * `kalm-qa/` The source code for KALM-QA (Prolog).
 
-# How to generate MetaQA queries?
-1. The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in kalm-qa/metaqa_query.txt. **Note that** each time before running the program, metaqa_query.txt has to be cleared.
-2. Run tools/intermediate_query_processing/MetaQABatch.java on metaqa_query.txt to remove singleton variables.
+# Dependency
+  XSB 3.7. The installation guide can be found in http://xsb.sourceforge.net/.
 
 # How to convert MetaQA queries to CNL in Prolog format?
-Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`. The input files are the original MetaQA dataset (`metaqa/original`). 
+Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`. The input file is placed under `metaqa/original/`. These files are from the original MetaQA dataset (e.g., qa_train.txt, qa_test.txt). 
+
+# How to generate MetaQA queries?
+1. cd kalm-qa
+2. xsb
+3. ['mk.pl'].
+The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
+4. Run the Java program tools/intermediate_query_processing/MetaQABatch.java. The input file is metaqa_query.txt. This step is used to remove singleton variables.
+
+# How to train KALM-QA parser?
+1. cd kalm-qa
+2. xsb
+3. ['mk.pl']
+4. ?- annotate_sentence('John appears in a movie.',1/2,'Movie',[pair('Actor',1/1,required),pair('Film',1/4,required)],[],LVP).
+Step 4 shows how to compose an annotated sentences (training sentence). By running the query in step 4, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
+
 
 # How to run KALM-QA in Prolog?
 1. How to add frames to FrameOnt?
