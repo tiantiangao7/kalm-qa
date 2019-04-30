@@ -24,3 +24,9 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 
 # How to convert MetaQA queries to CNL in Prolog format?
 Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`. The input files are the original MetaQA dataset (`metaqa/original`). 
+
+# How to run KALM-QA in Prolog?
+1. How to add frames to FrameOnt?
+2. We are using XSB Prolog and load ['kalm-qa/mk.pl'].
+3. How to train the frame parser? 
+4. How to ask questions?
