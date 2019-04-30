@@ -30,7 +30,7 @@ Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/M
 3. ['mk.pl'].
 4. Run the Java program tools/intermediate_query_processing/MetaQABatch.java. The input file is metaqa_query.txt. This step is used to remove singleton variables.
 
-The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
+The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
 
 
 # How to train KALM-QA parser?
@@ -42,8 +42,13 @@ The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the locatio
 Step 4 shows how to compose an annotated sentences (training sentence). By running the query in step 4, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
 
 
-# How to run KALM-QA in Prolog?
-1. How to add frames to FrameOnt?
-2. We are using XSB Prolog (in order to run KALM-QA, one needs to install XSB Prolog from http://xsb.sourceforge.net/) and load ['kalm-qa/mk.pl'].
-3. How to train the frame parser? 
-4. How to ask questions?
+# How to interactively query MetaQA KB?
+1. 
+
+
+# How to run MetaQA test set?
+1. cd query/2_hop_test
+2. xsb
+3. ['mk.pl']
+
+The result is saved in metaqa_result.txt.
