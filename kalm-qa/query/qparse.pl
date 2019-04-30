@@ -1,0 +1,1 @@
+parse_and_serialize_main :- parse_and_serialize('Mary buys a car.').
