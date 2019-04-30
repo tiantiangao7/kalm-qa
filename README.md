@@ -32,23 +32,23 @@ Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/M
 
 The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
 
-
 # How to train KALM-QA parser?
 1. cd kalm-qa
 2. xsb
-3. ['mk.pl']
+3. ['mk.pl'].
 4. ?- annotate_sentence('John appears in a movie.',1/2,'Movie',[pair('Actor',1/1,required),pair('Film',1/4,required)],[],LVP).
 
 Step 4 shows how to compose an annotated sentences (training sentence). By running the query in step 4, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
 
-
 # How to interactively query MetaQA KB?
-1. 
-
+1. cd query/interactive_query
+2. xsb
+3. ['mk.pl'].
+4. ?- movie('Film',(W5,I5),'Director',W2),movie('Film',(W5,I5),'Actor','John Krasinski').
 
 # How to run MetaQA test set?
 1. cd query/2_hop_test
 2. xsb
-3. ['mk.pl']
+3. ['mk.pl'].
 
 The result is saved in metaqa_result.txt.
