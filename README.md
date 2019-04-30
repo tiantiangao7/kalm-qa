@@ -2,7 +2,7 @@
 Authors: Tiantian Gao, Paul Fodor, Michael Kifer
 
 # Introduction
-KALM-QA is the question answering part of KALM. It is capable of answering complex multi-hop questions. We tested KALM-QA on MetaQA dataset and achieves 100% accuracy.
+KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/kalm). It is capable of answering complex multi-hop questions. We tested KALM-QA on MetaQA dataset and achieves 100% accuracy.
 
 # Code
 
