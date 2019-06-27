@@ -19,8 +19,11 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 * `kalm-qa/` The source code for KALM-QA (Prolog).
 
 # Dependency
-  XSB 3.7. The installation guide can be found in http://xsb.sourceforge.net/.
-  Stanford CoreNLP package (https://stanfordnlp.github.io/CoreNLP/).
+1. Java JRE 1.8 (https://www.java.com/en/download/)
+2. XSB Prolog Version 3.7 (http://xsb.sourceforge.net/)
+3. XSB Prolog version of Attempto Parsing Engine (APE) under LGPL licence (included in this repository)
+4. APE Clex under GPL licence (http://attempto.ifi.uzh.ch/site/downloads/files/) (included in this repository)
+5. Stanford CoreNLP package (https://stanfordnlp.github.io/CoreNLP/).
 
 # How to convert MetaQA queries to CNL in Prolog format?
 Run the Java program ``tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java``. The input file is placed under ``metaqa/original/``. These files are from the original MetaQA dataset (e.g., qa_train.txt, qa_test.txt). 
