@@ -22,17 +22,12 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
   XSB 3.7. The installation guide can be found in http://xsb.sourceforge.net/.
 
 # How to convert MetaQA queries to CNL in Prolog format?
-Run the Java program `tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`. The input file is placed under `metaqa/original/`. These files are from the original MetaQA dataset (e.g., qa_train.txt, qa_test.txt). 
+Run the Java program ``tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java``. The input file is placed under ``metaqa/original/``. These files are from the original MetaQA dataset (e.g., qa_train.txt, qa_test.txt). 
 
 # How to generate MetaQA queries?
-```
-cd kalm-qa
-xsb
-['mk.pl'].
-```
-Run the Java program tools/intermediate_query_processing/MetaQABatch.java. The input file is metaqa_query.txt. This step is used to remove singleton variables.
-
-The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
+1. Run Java program ``tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java`` to convert NL metaqa queries to CNL queries, where the output ``metaqa_query.txt``.
+2. Run the Java program tools/intermediate_query_processing/MetaQABatch.java. This step is used to remove singleton variables. The input file is ``metaqa_query.txt``. The output is a Prolog file. 
+3. The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the location of the input metaqa file in Prolog format (2_hop_test.pl, 2_hop_training.pl, 3_hop_test.pl, 3_hop_training.pl). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, metaqa_query.txt has to be empty.
 
 # How to train KALM-QA parser?
 ```
