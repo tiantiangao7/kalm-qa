@@ -2,7 +2,7 @@
 :- import member/2 from basics.
 :- import term_to_atom/2 from string.
 
-% annotate_sentence(+Sentence,+TargetIndex,+Frame,+[pair(FE1,Index1),pair(FE2,Index2),...],-LVP)
+% learn_lvp(+Sentence,+TargetIndex,+Frame,+[pair(FE1,Index1),pair(FE2,Index2),...],-LVP)
 % @param Sentence is the CNL sentence to annotate
 % @param TargetIndex is the index of the target word
 % @param Frame is the frame name
@@ -11,7 +11,7 @@
 % @param LVP is of the form lvp(Target,Frame,[pair(FE1,LFE1),pair(FE2,LFE2),...]) where LFE
 %        denotes the syntactic pattern for extracting the FEI{i} given Target
 
-annotate_sentence(Sentence,TargetIndex,Frame,FEList,SynonymList,LVP) :-
+learn_lvp(Sentence,TargetIndex,Frame,FEList,SynonymList,LVP) :-
     acetext_to_drs_training(Sentence,_,_,drs(Refs,Predicates),_,CorefList),
     Refs \= [],
     Predicates \= [],
@@ -31,7 +31,7 @@ annotate_sentence(Sentence,TargetIndex,Frame,FEList,SynonymList,LVP) :-
      serialize_lvp(Target,POS,Frame,LFEList,SynonymList)
     ).
 
-annotate_sentence(Sentence,_,_,_,_,_) :-
+learn_lvp(Sentence,_,_,_,_,_) :-
     acetext_to_drs_training(Sentence,_,_,_,M,_),
     write(M). 
 
@@ -48,7 +48,7 @@ get_lfe_from_felist(DRSPredicates,TargetIndex,[pair(FE,FEIndex,Flag)|Rest],
      write('Invalid flag value [required, optional].'),
      fail
     ),
-    construct_lfe(DRSPredicates,TargetIndex,CorefIndex,LFE),
+    grammatical_pattern(DRSPredicates,TargetIndex,CorefIndex,LFE),
     term_to_atom(LFE,LFE_Atom),
     (logical_syntactic_pattern(LFE_Atom)
      ->
@@ -68,7 +68,7 @@ get_lfe_from_felist(DRSPredicates,TargetIndex,[pair(FE,FEIndex,Flag)|Rest],
      write('Invalid flag value [required, optional].'),
      fail
     ),
-    construct_lfe(DRSPredicates,TargetIndex,FEIndex,LFE),
+    grammatical_pattern(DRSPredicates,TargetIndex,FEIndex,LFE),
     term_to_atom(LFE,LFE_Atom),
     (logical_syntactic_pattern(LFE_Atom)
      ->
@@ -97,7 +97,7 @@ serialize_sentence_annotation(Sentence,TargetIndex,POS,Frame,FEList,SynonymList,
     fmt_write(Stream,"%S(\'%S\',\'%S\',\'%S\',",
         args(lvp,Target,POS,Frame)),
     write(Stream,'['),
-    serialize_LFEList(Stream,LFEList),
+    construct_lvp(Stream,LFEList),
     write(Stream,'])).\n'),
     close(Stream).
     
@@ -120,7 +120,7 @@ serialize_lvp(Target,POS,Frame,LFEList,SynonymList) :-
     fmt_write(Stream,"%S(Lexem,POS,\'%S\',",
         args(lvp,Frame)),
     write(Stream,'['),
-    serialize_LFEList(Stream,LFEList),
+    construct_lvp(Stream,LFEList),
     write(Stream,']) :- '),
     fmt_write(Stream,"%S(\'%S\',\'%S\',\'%S\',Lexem,POS)",
         args(fn_synonym,Target,POS,Frame)),
@@ -140,11 +140,11 @@ serialize_synonym_list(Stream,Target,POS,Frame,[S1|Rest]) :-
     ),
     serialize_synonym_list(Stream,Target,POS,Frame,Rest).
 
-serialize_LFEList(Stream,[pair(FE1,LFE1,Flag1),pair(FE2,LFE2,Flag2)|Rest]) :-
+construct_lvp(Stream,[pair(FE1,LFE1,Flag1),pair(FE2,LFE2,Flag2)|Rest]) :-
     fmt_write(Stream,"%S(\'%S\',\'%S\',%S),",args(pair,FE1,LFE1,Flag1)),
-    serialize_LFEList(Stream,[pair(FE2,LFE2,Flag2)|Rest]).
+    construct_lvp(Stream,[pair(FE2,LFE2,Flag2)|Rest]).
 
-serialize_LFEList(Stream,[pair(FE1,LFE1,Flag1)]) :-
+construct_lvp(Stream,[pair(FE1,LFE1,Flag1)]) :-
     fmt_write(Stream,"%S(\'%S\',\'%S\',%S)",args(pair,FE1,LFE1,Flag1)).
 
 valid_fe_annotation_flag(required).

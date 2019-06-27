@@ -1,6 +1,6 @@
 :- dynamic metaqa_query_id/1.
 
-sentence_to_metaqa_query(Sentence) :-
+parse_sentence(Sentence) :-
     retractall(serialized_drs_fact(_,_)),
     retractall(query_word(_)),
     (metaqa_query_id(X)

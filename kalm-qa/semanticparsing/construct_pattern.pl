@@ -1,13 +1,13 @@
 :- table reach/5.
 :- import append/3, member/2 from basics.
 /*
-Usage: construct_lfe(+DRSFacts,+Index1,+Index2,-Output)
+Usage: grammatical_pattern(+DRSFacts,+Index1,+Index2,-Output)
 */
-construct_lfe(DRSFacts,TargetIndex,FEIndex,LFE) :-
+grammatical_pattern(DRSFacts,TargetIndex,FEIndex,LFE) :-
     TargetIndex \= FEIndex,
     reach(DRSFacts,TargetIndex,FEIndex,LFE,_).    
 
-construct_lfe(_,TargetIndex,TargetIndex,['self']).
+grammatical_pattern(_,TargetIndex,TargetIndex,['self']).
 
 /*
 Usage: get_predicate_from_word_index(+DRSFacts,+Index,-WordPredicate)
