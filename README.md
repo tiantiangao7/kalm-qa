@@ -39,7 +39,7 @@ The entry point to KALM-QA is kalm-qa/mk.pl. The last line specifies the locatio
 cd kalm-qa`
 xsb
 ['mk.pl'].
-?- annotate_sentence('John appears in a movie.',1/2,'Movie',[pair('Actor',1/1,required),pair('Film',1/4,required)],[],LVP).
+?- learn_lvp('John appears in a movie.',1/2,'Movie',[pair('Actor',1/1,required),pair('Film',1/4,required)],[],LVP).
 ```
 Step 4 shows how to compose an annotated sentences (training sentence). By running the query in step 4, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
 
