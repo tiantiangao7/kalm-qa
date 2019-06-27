@@ -55,7 +55,7 @@ cd query/2_hop_test
 xsb
 ['mk.pl'].
 ```
-The result is saved in metaqa_result.txt.
+The result is saved in `metaqa_result.txt`.
 
 # License
 The license of the KALM and KALM-QA code is BSD 3-Clause License.
