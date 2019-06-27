@@ -18,7 +18,7 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 * `error_analysis/3_hop` This directory contains the errors for 3-hop testing data. total_errors.txt has all the errors. fild_id_errors.txt has the errors that are caused by the issue where MetaQA doesn't distinguish the different films that share the same film ID. others_error.txt has all the rest errors caused by unknown reasons. We have manually checked 1628 (50%) of the "other errors" and added the reasons why MetaQA doesn't return the correct answers. The analysis is in metaqa_error_analysis.txt.
 * `kalm-qa/` The source code for KALM-QA (Prolog).
 
-# Dependency
+# Dependencies
 1. Java JRE 1.8 (https://www.java.com/en/download/)
 2. XSB Prolog Version 3.7 (http://xsb.sourceforge.net/)
 3. XSB Prolog version of Attempto Parsing Engine (APE) under LGPL licence (included in this repository)
