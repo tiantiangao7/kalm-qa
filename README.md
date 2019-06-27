@@ -25,19 +25,21 @@ KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/
 4. APE Clex under GPL licence (http://attempto.ifi.uzh.ch/site/downloads/files/) (included in this repository)
 5. Stanford CoreNLP package (https://stanfordnlp.github.io/CoreNLP/).
 
-# How to convert MetaQA queries to CNL in Prolog format?
-1. Run the Java preprocessor  ``tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java``. The input file is placed under ``metaqa/original/`` (these files are from the original MetaQA dataset (e.g., `qa_train.txt`, `qa_test.txt`)). The output is ``metaqa_query.txt``.
-2. Run the Java program `tools/intermediate_query_processing/MetaQABatch.java`. This step is used to remove singleton variables. The input file is ``metaqa_query.txt``. The output is a Prolog file. 
-3. The entry point to KALM-QA is `kalm-qa/mk.pl`. The last line specifies the location of the input metaqa file in Prolog format (`2_hop_test.pl`, `2_hop_training.pl`, `3_hop_test.pl`, `3_hop_training.pl`). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, `metaqa_query.txt` has to be empty.
+# How to convert NL MetaQA queries to CNL?
+Run the Java preprocessor  ``tools/metaqa_to_cnl/src/main/java/edu/stonybrook/cs/main/Main.java``. The input file is placed under ``metaqa/original/`` (these files are from the original MetaQA dataset (e.g., `qa_train.txt`, `qa_test.txt`)).
 
 # How to train KALM-QA parser?
 ```
-cd kalm-qa`
+cd kalm-qa
 xsb
 ['mk.pl'].
 ?- learn_lvp('John appears in a movie.',1/2,'Movie',[pair('Actor',1/1,required),pair('Film',1/4,required)],[],LVP).
 ```
-Step 4 shows how to compose an annotated sentences (training sentence). By running the query in step 4, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
+The above code shows how to compose an annotated sentences (training sentence). By running the `learn_lvp query`, an lvp is automatically generated and added to `kalm-qa/semanticparsing/data/lvp.pl`.
+
+# How to convert CNL MetaQA queries to n-hop Prolog queries?
+1. The entry point to KALM-QA is `kalm-qa/mk.pl`. The last line specifies the location of the input CNL MetaQA file in Prolog format (`2_hop_test.pl`, `2_hop_training.pl`, `3_hop_test.pl`, `3_hop_training.pl`). The output is saved in `kalm-qa/metaqa/metaqa_query.txt`. **Note that** each time before running the program, `metaqa_query.txt` has to be empty.
+2. Run the Java program `tools/intermediate_query_processing/MetaQABatch.java`. This step is used to remove singleton variables. The input file is ``metaqa_query.txt``. The output is a Prolog file. 
 
 # How to interactively query MetaQA KB?
 ```
