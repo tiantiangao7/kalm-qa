@@ -1,11 +1,14 @@
 # KALM-QA
 Authors: Tiantian Gao, Paul Fodor, Michael Kifer
 
-# Introduction
 KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/kalm). It is capable of answering complex multi-hop questions. We tested KALM-QA on the MetaQA dataset and achieves 100% accuracy.
 
-# Code
+# Academic papers (high-level description of the system)
+1. Querying Knowledge via Multi-Hop English Questions. Tiantian Gao, Paul Fodor, Michael Kifer. Proceedings of the 35th International Conference on Logic Programming (ICLP) 2019, Las Cruces, New Mexico, USA. 16 pages. Published in Theory and Practice of Logic Programming, Cambridge University Press. Link to technical report: https://arxiv.org/pdf/1907.08176.pdf
+2. Knowledge Authoring for Rule-Based Reasoning. Tiantian Gao, Paul Fodor, Michael Kifer. ODBASE, OTM Conferences 2018: 461-480.  https://github.com/tiantiangao7/kalm/blob/master/docs/KALM_ODBASE18.pdf
+3. High Accuracy Question Answering via Hybrid Controlled Natural Language. Tiantian Gao, Paul Fodor, Michael Kifer. Web Intelligence (WI), 2018. https://github.com/tiantiangao7/kalm/blob/master/docs/QA_WI18.pdf
 
+# Code
 * `metaqa/original/`The original MetaQA vanilla dataset for 2-hop and 3-hop training and testing questions (https://github.com/yuyuz/MetaQA).
 * `metaqa/rectified/`The rectified version of the MetaQA vanilla dataset. The original MetaQA dataset contains errorneous answers (as is discussed in our paper). We inspected the errors from the original MetaQA dataset and created a rectified version which contains the  correct answers for the multi-hop questions in MetaQA.
 * `metaqa/cnl_input/` The MetaQA vanilla dataset in ACE CNL grammar. Note, this dataset only contains the multi-hop questions (not answers). It is used as the input to KALM-QA to get the corresponding queries in Prolog.
@@ -58,4 +61,4 @@ xsb
 The result is saved in `metaqa_result.txt`.
 
 # License
-The license of the KALM and KALM-QA code is BSD 3-Clause License.
+The license of the KALM and KALM-QA code is BSD 3-Clause License. Other code licenses are included in the repository.
