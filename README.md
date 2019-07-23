@@ -1,7 +1,7 @@
 # KALM-QA (Knowledge Authoring Logic Machine (KALM) Question Answering)
 Tiantian Gao, Paul Fodor, Michael Kifer
 
-KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/kalm). It is capable of answering complex multi-hop questions. We tested KALM-QA on the MetaQA dataset and achieves 100% accuracy.
+KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/kalm). It is capable of answering complex multi-hop questions. We tested KALM-QA on the MetaQA dataset and achieved 100% accuracy.
 
 # Academic papers (high-level description of the system)
 1. Querying Knowledge via Multi-Hop English Questions. Tiantian Gao, Paul Fodor, Michael Kifer. Proceedings of the 35th International Conference on Logic Programming (ICLP) 2019, Las Cruces, New Mexico, USA. Published in Theory and Practice of Logic Programming, Cambridge University Press. Link to technical report: https://arxiv.org/pdf/1907.08176.pdf
