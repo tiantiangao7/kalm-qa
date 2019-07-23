@@ -1,5 +1,5 @@
 # KALM-QA (Knowledge Authoring Logic Machine (KALM) Question Answering)
-Authors: Tiantian Gao, Paul Fodor, Michael Kifer
+Tiantian Gao, Paul Fodor, Michael Kifer
 
 KALM-QA is the question answering part of KALM (https://github.com/tiantiangao7/kalm). It is capable of answering complex multi-hop questions. We tested KALM-QA on the MetaQA dataset and achieves 100% accuracy.
 
